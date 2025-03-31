@@ -1,4 +1,3 @@
----
-title: Welcome to my Nithin Saji's blog
----
+title:Welcome to my blog
+
 
