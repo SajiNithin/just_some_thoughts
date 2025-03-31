@@ -25,12 +25,15 @@ The real confusion began when I checked the return value’s type and saw that i
 After about thirty minutes of debugging, I finally discovered the issue. The function was indeed returning the correct sum—but only in the last recursive call. The problem was that after the final recursive function returned the sum, the earlier recursive calls didn’t return anything. Many of them never reached the condition where a value was returned, so they ended up returning null by default.
 
 As a result, the function I initially called (the base function) wasn’t returning the sum—it was returning null instead. The correct return value was essentially lost amidst all these null returns.
-```mermaid
-
+<pre class="mermaid">
 graph TD;
     A["returns 21"] --> B["return null"];
     B --> C["return null"];
     C --> D["return null"];
     D --> E["return null"];
     E --> F["return null"];
-```
+</pre>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+
+
+
